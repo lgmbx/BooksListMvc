@@ -1,0 +1,45 @@
+﻿@model BooksMvc.Models.Book
+
+<div class="container row">
+    <div class="col-12">
+        <h2 class="text-info">Edit Book</h2>
+    </div>
+</div>
+
+<br />
+
+<div class="container row">
+    <div class="col-4">
+        <form asp-action="Edit">
+
+            <div asp-validation-summary="ModelOnly"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author"></label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="ISBN"></label>
+                <input asp-for="ISBN" class="form-control" />
+            </div>
+            <div class="orm-group">
+                <input type="submit" value="Save Changes" class="btn btn-info btn-sm" />
+            </div>
+        </form>
+    </div>
+    
+
+</div>
+
+
+
+@section Scripts{ 
+@{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

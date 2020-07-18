@@ -1,0 +1,39 @@
+﻿@model BooksMvc.Models.Book
+
+
+<div class="container row m-0 p-0">
+    <div class="col-12">
+        <h2 class="text-info">Create New Book</h2>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-group">
+                <label asp-for="Name" class=""></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class=""></label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISBN" class=""></label>
+                <input asp-for="ISBN" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-info" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
